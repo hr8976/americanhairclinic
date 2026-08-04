@@ -78,7 +78,9 @@ h3 { margin: 0; font-size: 25px; }
 .section-heading h2 { max-width: 680px; }
 .section-heading .section-copy { max-width: 390px; margin: 0; }
 .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.service-card { min-height: 270px; padding: 32px 28px; background: white; border-top: 3px solid var(--gold); box-shadow: 0 10px 28px rgba(44,32,11,.05); }
+.service-card { overflow: hidden; min-height: 270px; background: white; border-top: 3px solid var(--gold); box-shadow: 0 10px 28px rgba(44,32,11,.05); }
+.service-card-image { display: block; width: 100%; height: 190px; object-fit: cover; }
+.service-card-body { padding: 26px 28px 30px; }
 .service-number { color: #b4831f; font-family: Georgia, serif; font-size: 17px; }
 .service-card h3 { margin: 38px 0 14px; }
 .service-card p { margin: 0; color: var(--muted); line-height: 1.7; }
