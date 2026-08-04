@@ -142,6 +142,45 @@ const UNVERIFIED: VerifiedFields = {
   serviceList: false,
 };
 
+const serviceImages: ImageAsset[] = [
+  {
+    src: "https://americanhairclubs.com/wp-content/uploads/2026/03/2025-40-768x768-1.webp",
+    alt: "Custom hair patch service at American Hair Club",
+    width: 768,
+    height: 768,
+  },
+  {
+    src: "https://americanhairclubs.com/wp-content/uploads/2026/03/fi.webp",
+    alt: "Hair extensions and hair replacement service",
+    width: 768,
+    height: 576,
+  },
+  {
+    src: "https://americanhairclubs.com/wp-content/uploads/2026/03/Untitled-design-2025-09-24T150437.753-768x576-1.webp",
+    alt: "Hair patch and hair replacement consultation",
+    width: 768,
+    height: 576,
+  },
+  {
+    src: "https://americanhairclubs.com/wp-content/uploads/2026/03/Untitled-design-2025-09-25T111219.189-768x576-1.webp",
+    alt: "Clip-in and clip-on hair system",
+    width: 768,
+    height: 576,
+  },
+  {
+    src: "https://americanhairclubs.com/wp-content/uploads/2026/03/Untitled-design-2025-09-25T111203.699-768x576-1.webp",
+    alt: "Tape hair extension service",
+    width: 768,
+    height: 576,
+  },
+  {
+    src: "https://americanhairclubs.com/wp-content/uploads/2026/03/Untitled-design-2025-09-25T111141.803-768x576-1.webp",
+    alt: "Micro and nano hair service",
+    width: 768,
+    height: 576,
+  },
+];
+
 /* -------------------------------------------------------------------------- */
 /* Locations                                                                  */
 /* -------------------------------------------------------------------------- */
@@ -317,7 +356,7 @@ export const locations: Location[] = [
     },
     media: {
       heroImage: null,
-      galleryImages: [],
+      galleryImages: serviceImages,
     },
     verifiedFields: { ...UNVERIFIED },
   },
@@ -492,7 +531,7 @@ export const locations: Location[] = [
     },
     media: {
       heroImage: null,
-      galleryImages: [],
+      galleryImages: serviceImages,
     },
     verifiedFields: { ...UNVERIFIED },
   },
@@ -667,7 +706,7 @@ export const locations: Location[] = [
     },
     media: {
       heroImage: null,
-      galleryImages: [],
+      galleryImages: serviceImages,
     },
     verifiedFields: { ...UNVERIFIED },
   },
