@@ -125,6 +125,56 @@ h3 { margin: 0; font-size: 25px; }
 .footer-bottom { padding: 20px 0 28px; border-top: 1px solid rgba(226,166,55,.55); color: #d7d1c8; text-align: center; font-family: Georgia, serif; }
 .footer-bottom p { margin: 0; }
 
+/* ---------------------------------------------------------------------------
+   Location page SEO sections
+   Additive only — existing brand colours, type scale and spacing are reused.
+   --------------------------------------------------------------------------- */
+
+.breadcrumb-nav { margin: 0 0 22px; font-size: 13px; }
+.breadcrumb-nav ol { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.breadcrumb-nav li { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-light); }
+.breadcrumb-nav a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(234,210,142,.4); }
+.breadcrumb-nav a:hover { border-bottom-color: var(--gold-light); }
+.breadcrumb-nav [aria-current="page"] { color: #efe9db; }
+.breadcrumb-sep { color: rgba(234,210,142,.65); }
+
+.hero-lede { max-width: 720px; margin: 26px auto 0; color: #e3dfd6; font-size: 17px; line-height: 1.75; }
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 32px; }
+.button-outline-light { border: 1px solid var(--gold-light); color: var(--gold-light); }
+.button-outline-light:hover { background: rgba(234,210,142,.12); }
+
+.reason-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; margin: 0; padding: 0; list-style: none; }
+.reason-card { padding: 30px 28px; border: 1px solid var(--line); border-left: 3px solid var(--gold); background: white; }
+.reason-card h3 { margin: 0 0 12px; font-size: 22px; }
+.reason-card p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+.faq-section { padding: 92px 0; background: #f6f0df; }
+.faq-list { display: grid; gap: 18px; }
+.faq-item { padding: 28px 30px; border-top: 3px solid var(--gold); background: white; box-shadow: 0 10px 28px rgba(44,32,11,.05); }
+.faq-item h3 { margin: 0 0 12px; font-size: 23px; line-height: 1.3; }
+.faq-item p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
+
+.contact-card-title { margin: 0 0 24px; color: white; font-size: 23px; }
+.contact-card .contact-label { margin-bottom: 6px; }
+.contact-card .text-link { border-bottom: 1px solid rgba(234,210,142,.45); }
+
+.inline-link { color: #a07414; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.inline-link:hover { color: #7d590c; }
+.locations-note { margin-top: 38px; }
+.details-section .text-link { text-decoration: none; }
+
+.location-grid { margin: 0; padding: 0; list-style: none; }
+.location-grid > li { display: flex; }
+.location-grid > li > .location-card { width: 100%; }
+
+.plain-list { display: grid; gap: 14px; margin: 28px 0 0; padding: 0; list-style: none; font-size: 17px; }
+
+@media (max-width: 700px) {
+  .faq-section { padding: 65px 0; }
+  .hero-lede { font-size: 16px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+}
+
 @media (max-width: 980px) {
   .topbar-inner { padding: 10px 0; }
   .topbar-social { display: none; }

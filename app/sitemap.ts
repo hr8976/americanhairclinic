@@ -1,6 +1,23 @@
 import type { MetadataRoute } from "next";
+import { locations } from "../data/locations";
+import { deploymentBaseUrl } from "../lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
-  return ["/locations", "/pune", "/bangalore", "/vizag"].map((path) => ({ url: `${baseUrl}${path}`, changeFrequency: "monthly", priority: path === "/locations" ? 0.9 : 0.8 }));
+  const baseUrl = deploymentBaseUrl();
+  const lastModified = new Date();
+
+  return [
+    {
+      url: `${baseUrl}/locations/`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    ...locations.map((location) => ({
+      url: `${baseUrl}/${location.slug}/`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
 }
