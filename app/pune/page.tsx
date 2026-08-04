@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { LocationPage } from "../../components/location-page";
-import { getLocation } from "../../data/locations";
+import { requireLocation } from "../../data/locations";
+import { buildPageMetadata } from "../../lib/metadata";
 
-const location = getLocation("pune")!;
+const location = requireLocation("pune");
 
-export const metadata: Metadata = {
-  title: "Hair Patch in Pune",
-  description: "Private hair patch and hair replacement consultations in Pune with American Hair Club.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: location.metaTitle,
+  description: location.metaDescription,
+  canonical: location.canonical,
+});
 
 export default function PunePage() {
   return <LocationPage location={location} />;
