@@ -16,6 +16,7 @@ import {
 } from "../lib/structured-data";
 import { JsonLd } from "./json-ld";
 import { Breadcrumbs } from "./breadcrumbs";
+import { SiteFrame } from "./site-chrome";
 
 const PENDING_BRANCH_DETAILS =
   "Contact our team to confirm current appointment availability and branch details.";
@@ -52,7 +53,8 @@ export function LocationPage({ location }: { location: Location }) {
     (isVerified(location, "hours") && location.contact.hoursLabel);
 
   return (
-    <main className="location-page">
+    <SiteFrame location={location}>
+      <main className="location-page">
       <JsonLd id={`ld-${location.slug}`} data={graph} />
 
       <section className="page-hero">
@@ -141,15 +143,31 @@ export function LocationPage({ location }: { location: Location }) {
             <p className="section-copy">{location.services.lede}</p>
           </div>
           <div className="service-grid">
-            {location.services.cards.map((card, index) => (
-              <article className="service-card" key={card.id}>
-                <span className="service-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3>{card.title}</h3>
-                <p>{card.description}</p>
-              </article>
-            ))}
+            {location.services.cards.map((card, index) => {
+              const image = location.media.galleryImages[index % location.media.galleryImages.length];
+
+              return (
+                <article className="service-card" key={card.id}>
+                  {image ? (
+                    <img
+                      className="service-card-image"
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                      loading="lazy"
+                    />
+                  ) : null}
+                  <div className="service-card-body">
+                    <span className="service-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3>{card.title}</h3>
+                    <p>{card.description}</p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -314,6 +332,7 @@ export function LocationPage({ location }: { location: Location }) {
           </a>
         </div>
       </section>
-    </main>
+      </main>
+    </SiteFrame>
   );
 }
