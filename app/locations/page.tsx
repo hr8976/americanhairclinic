@@ -5,6 +5,7 @@ import { JsonLd } from "../../components/json-ld";
 import { locations } from "../../data/locations";
 import { buildPageMetadata } from "../../lib/metadata";
 import { canonicalUrl } from "../../lib/site";
+import { SiteFrame } from "../../components/site-chrome";
 import {
   breadcrumbNode,
   buildGraph,
@@ -41,7 +42,8 @@ const graph = buildGraph([
 
 export default function LocationsPage() {
   return (
-    <main>
+    <SiteFrame>
+      <main>
       <JsonLd id="ld-locations" data={graph} />
 
       <section className="page-hero">
@@ -149,6 +151,7 @@ export default function LocationsPage() {
           </a>
         </div>
       </section>
-    </main>
+      </main>
+    </SiteFrame>
   );
 }
